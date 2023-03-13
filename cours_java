@@ -190,11 +190,52 @@ A la compolation , tout le code est coupé et envoyé dans le constructeur aprè
 3- Le bloc d'instance est exécuter après le constructeur de la super class
 4- Les blocs d'instance s'exécutent dans l'ordre dans lequel ils apparaîssent.
 
-
-# Exemple de modificateur d'accès 
+# Les modificateurs d'accès 
 public
 private
 protected
+default
 
+Un modificateur d'accès est un mot clé qui permet de changer la visibilité oi la portée d'une méthode, d'un champs ou d'une classe.
+
+Ces mot clé peuveunt se placer partout.
+
+            class   package     sous-class hors package     hors package
+private     v       *           *                           *
+default     v       v           *                           *
+protected   v       v           v                           *
+pulbic      v       v           v                           v
+
+
+
+* public : désigne l'assecibilité poirtout dans un programme. Même hors du package une classe / méthode / champs est accessible.
+
+* protected : placcé derrière une classe / méthode / champs signifie que la classe / méthode / chaps peut etre accessible tant que l'utilisation est faite dans le même package.
+
+* default : C'est le modificateur d'une affecté a une classe / champs / méthode qui n'est ni private ni public ni protected.
+
+* private : Implique que ce n'est accessible qu'a l'interieur de la classe.
+
+
+## Classe abstraite et Interface
+
+# L'abstraction : 
+C'est la faite de cahcher des fonctionnements de l'appplication et de montrer uniquement celles qui sont abstraites
+
+L'abstraction en Java
+
+ Une classe abstraite est precedé du mot abstract
+
+ NB: On doit utiliser "abstract" pour les class abstract
+
+ Peut avoir ou non des méthodes abstraite
+
+ Pas d'instanciation
+
+ Peut avoir des méthodes final
+
+ Elle peut avoir des construceur et des m"thodes static
 
 ## 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
+
+
