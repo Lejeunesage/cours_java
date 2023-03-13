@@ -1,0 +1,251 @@
+# Polymorphisme 
+
+## Overloading
+ Ici, il s'agit de la surcharge de la méthode avec l'accent sur la signature de la méthode.
+
+ --La signature d'une méthode, c'est l'ensemble constitué par :
+        **le nom de la méthode,
+        **les types et leur ordre et le nombre de paramètre.
+
+## Overridding
+
+ Ici, il s'agit de la surcharge de la méthode avec l'accent sur le code à exécuter.
+ Autrement dit, nous avons plusieurs méthodes mais rédéfinies pour une exécution différente. C'est généralement le cas d'une héritage, lorsqu'on doit utiliser une méthode de la classe parente et réécrire le code à exécuter à l'appel de la méthode sur une instance de la classe fille.
+
+ NOTE: TOUTES LES CLASSES JAVA ETENDENT D'UNE MEME CLASSE PRINCIPALE QU'EST : "class Object {}" 
+
+
+# Constructeur
+Il s'écrit suivant : "public Nomdelaclasse {}".
+
+
+# Les Variables "static"
+
+Ce sont des variables qui ne sont déclarées qu'une seule fois dans le cycle de vie de la classe; du code.
+Précédée des mots clés de 'porté' et celui *static, elle subit toujours une initialisation lors de sa déclaration.
+
+NOTE : On accède JAMAIS à une variable static en appelant sur UNE INSTANCE de la classe !
+
+#### plutôt on l'appelle directement sur la classe soit :
+                Nomdelaclass.nomdelavar;
+Notons que leur valeur est modifiable autant de fois que nécessaire.
+
+
+
+# Les Méthodes "static" et Blocs "static"
+
+
+
+
+
+
+
+
+### 04 différences entre Overload et Override
+
+        ## Override
+1- est utilisé pour fournir une implémentation spécifique d'une méthode déjà disponible dans la super classe;
+
+2- il s'effectue dans deux classes ayant une relation d'héritage;
+
+3- On doit conserver la signature mais en changeant le code à exécuter;
+
+4- le type de retour doit être identique.
+
+        ## Overload
+1- utilisé pour avoir une meilleure lisibilité du code;
+
+2- il s'effectue dans la même classe       
+
+3- les paramêtres doivent être différents soit : la signature soit : -type, ordre, nom;
+
+4- il ne peut être effectuer en changeant uniquement le type de retour. Ce type peut rester ou être changer mais nous devons changer les paramêtres (soit les T,O,N).
+
+
+# Le mot clé " final" avec -les champs, les méthodes, -les classes
+
+---->Les champs/membres
+    Lorsqu'il est utilisé sur un membre, il bloque toute modification de sa valeur. Il le déclare en fait comme une constante et donc déclare que 'la valeur affectée à ce membre est DEFINITIVE';
+    Ex : final private String name = "Toto";
+            |
+         il est toujours mis au 
+         début de l'instruction;
+
+----> Les méthodes
+    Pour les méthodes, il bloque toute réécriture de la méthode. Il signifie que la méthode est déjà dans sa configuration DEFINITIVE.
+
+
+    NOTE : ce mot clé ne modifie par la signature de la méthode.
+
+----> Les classes 
+    Il bloque le processus d'héritage de la classe. Donc elle ne peut plus servir de parent à aucune autre classe et ne peut ainsi plus étendu.
+
+
+# HERITAGE
+
+Deux notions principales sont à soulever dans ce concept. Nous avons : -héritage simple;
+        -aggrégation.
+
+    ### Aggr"egation
+
+    C'est une manière de traduire la relation existante entre deux objets. C'est une forme d'association qui traduit une relation entre deux objets de type "a"(avoir). 
+    Ex : une personne "a" une adresse.
+
+    Pour être considéré comme une aggrégation, un objet et ses membres doivent avoir la relation suivante :
+        -> le membre fait parti de l'objet;
+        -> le membre peut appartenir à plusieurs objets;
+        -> le membre n'a pas son existence géré par l'objet.
+
+
+# Le mot clé "super"
+
+C'est un mot clé qui s'utilise avec différents élements signifiant donc différentes choses.
+A savoir : 
+ == avec la classe: il s'utilise à l'intérieur du constructeur d'une classe fille pour signifier le constructeur de la classe parente;
+ syntaxe : < super(); >
+
+ == avec une méthode ou un membre: il s'utilise juste pour accéder à cet élement de la classe super (classe parent);
+ syntaxe : -pour la méthode < super.nomDelaméthode() >
+           -pour le membre < super.nomDumembre > ;
+
+
+
+# Les Blocs d'instance et static
+
+### les blocs d'instance
+    ils servent à exécuter du code avant que le code du constructeur s'exécute à chaque instanciation de la classe. 
+
+    syntaxe : < { 
+                    //code à exécuter
+
+                        } >
+                        
+
+    NOTE : Ce code s'exécute après le super  (si il existe)
+
+    Le bloc d'initialisation d'instance est un bloc de code qui permet d'initialiser les champs non static de la classe.
+
+    Il existe principalement trois 03 règles :
+
+          + règle n°1  -- le bloc d'instance est exécuté lors de l'instanciation de la classe;
+
+          + règle n°2  -- le bloc d'instance est exécuté après le constructeur de la super classe;
+
+          + règle n°3  -- les blocs d'instances s'exécutent dans l'ordre dans lequel ils apparaissent;
+
+
+
+### les blocs static
+
+    D'abord, les 'blocs statiques' se sont des blocs déclarés à l'intérieur de la classe qui servent à l'initialisation des variables statiques.
+Ce bloc s'EXECUTE MEME AVANT LE CONSTRUCTEUR. Il est écrit suivant la syntaxe suivante:
+        static {
+            public static type var1 = value; 
+            public  static type var1 = value; 
+            public  static type var1 = value; 
+        }
+
+/** *********************************************************************************
+
+            ORDRE D'EXECUTION DU CODE D'UNE CLASSE
+
+
+    STATIC & BLOC STATIC    ||======>       SUPER  
+    (membres & méthodes)                (constructor de 
+                                        la super classe)
+                                              ||
+                                              ||
+                                              ||  
+                                            \\  //   
+                                             \\//
+    CODE CONSTRUCTOR        <======||   BLOCS D'INSTANCES 
+    (constructor de                  (exécution dans l'ordre  
+    la classe)                        d'apparition dans le code)
+
+
+
+
+**************************************************************************************
+*/
+
+
+# les modificateurs d'accès
+
+Nous avons : 
+  - default
+  - public
+  - private
+  - protected
+
+Ce sont des mots clés qui permettent de changer la portée/visibilité/accessibilité d'un membre, d'une méthode, d'une classe
+
+
+
+
+            |           |           |           |           |
+____________|___________|___________|___________|___________|
+|           |           |           |           |           |
+|  private  |           |           |           |           |              
+|           |           |           |           |           |              
+|  default  |           |           |           |           |              
+|           |           |           |           |           |              
+| protected |           |           |           |           |              
+|           |           |           |           |           |              
+| public    |           |           |           |           |              
+|           |           |           |           |           |              
+|           |           |           |           |           |              
+|           |           |           |           |           |              
+|           |           |           |           |           |              
+|           |           |           |           |           |
+
+
+ * protected : il sert à déclarer que l'élément qui le porte est accessible aussi bien dans sa classe que dans les sous-classes (classes filles) à la fois à l'intérieur du même package et hors du package;
+
+ * default : ce n'est pas un mot à écrire, c'est juste l'état "par défaut" lorsqu'on ne mets rien devant un élément. Il implique que l'élément est accessible partout mais uniquement dans son package. Il agit comme le < public > mais ici UNIQUEMENT dans le package dans lequel il est déclaré.
+
+ * private : il sert à déclarer que l'élément qui le porte n'est accessible qu'à l'intérieur du fichier/classe dans lequel il est déclaré.  
+
+
+
+# L'abstraction
+
+C'est le processus par lequel on masque les détails d'implémentation à l'utilisateur et on ne dévoilé que la fonctionnalité finale.
+
+Il introduit deux notions de paradygme du language JAVA.
+
+   - les classes abstraites:
+        C'est une classe qui dispose ou non des méthodes abstraites. Pour définir cela, on utilise le mot clé "abstract". 
+        Cette classe pour être utilisé ne devra jamais être instancié mais uniquement servi de parent à une autre classe.
+        A noter:
+          -> doit être déclarer avec le mot clé 'abstract';
+          -> peut avoir ou non des méthodes abstraites;
+          -> est non instanciable;
+          -> peut avoir des méthodes finales et/ou statiques;
+          -> peut avoir des constructeurs;
+
+
+
+    - les méthodes abstraites :
+        Ce sont des méthodes définies avec devant le mot clé "abstract" se trouvant de conséquence dans une classe abstraite.
+      ## Une méthode abstraite est une méthode pour laquelle on effectue juste la déclaration dans une classe abstraite ( qui ne possède par de corps (sans code à exécuter) ) 
+
+
+# Les Interfaces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
