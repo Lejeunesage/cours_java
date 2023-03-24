@@ -3,10 +3,11 @@
 JAVA a été créer en 1995.
 Oracle est l'netreprise qui détient JAVA aujourd'hui (2023).
 Pour exécuter du code Java:
-1- Javac Main.java
+
+- Javac Main.java
 javac => javacompiler
 
-2- Java Main => pour obtenir le resultat.
+- Java Main => pour obtenir le resultat.
 
 # Compilation d'un code JAVA.
 
